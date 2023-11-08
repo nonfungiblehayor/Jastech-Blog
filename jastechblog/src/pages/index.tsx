@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Sofia_Sans } from "next/font/google";
 import Nav from "@/components/Layout/Nav";
+import Footer from "@/components/Layout/footer";
 
 const inter = Sofia_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <main className={` ${inter.className}`}>
         <Nav />
+        <Footer />
       </main>
     </>
   );

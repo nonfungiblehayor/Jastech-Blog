@@ -1,6 +1,6 @@
-import Icons from "./icons";
+
 import styled from "styled-components";
-import Link from "next/link";
+import Social from "@/components/Shared/social";
 import { useEffect, useState } from "react";
 
 const StyledPreHead = styled.section`
@@ -65,24 +65,7 @@ const PreHead = () => {
     setDate(dates);
     setDay(day);
   }, []);
-  const smIcons = [
-    {
-      icon: "facebook",
-      link: "",
-    },
-    {
-      icon: "twitter",
-      link: "",
-    },
-    {
-      icon: "instagram",
-      link: "",
-    },
-    {
-      icon: "youtube",
-      link: "",
-    },
-  ];
+ 
   return (
     <StyledPreHead>
       <section className="flex-row">
@@ -93,13 +76,7 @@ const PreHead = () => {
           <h1 className="flex-row">Breaking News</h1>
           <p>Indonesia says located black box recorders from crashed plane</p>
         </div>
-        <div>
-          {smIcons.map((item, index) => (
-            <Link href={item.link} key={index}>
-              <Icons type={item.icon} />
-            </Link>
-          ))}
-        </div>
+        <Social />
       </section>
     </StyledPreHead>
   );

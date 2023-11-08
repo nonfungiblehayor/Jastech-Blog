@@ -1,4 +1,4 @@
-import PreHead from "@/components/Shared/PreHead";
+import PreHead from "./PreHead";
 import Image from "next/image";
 import Link from "next/link";
 import StyledNav from "./style";
@@ -14,6 +14,10 @@ const Nav = () => {
         },
         {
             text: 'Sport',
+            link: ''
+        },
+        {
+            text: 'Technology',
             link: ''
         },
         {
