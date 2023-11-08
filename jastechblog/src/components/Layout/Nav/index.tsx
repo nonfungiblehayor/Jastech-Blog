@@ -2,6 +2,9 @@ import PreHead from "./PreHead";
 import Image from "next/image";
 import Link from "next/link";
 import StyledNav from "./style";
+import { Sofia_Sans } from "next/font/google";
+
+const sofia = Sofia_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 const Nav = () => {
     const links = [
         {
@@ -41,7 +44,7 @@ const Nav = () => {
     <PreHead />
     <StyledNav>
       <header>
-        <div className="flex-row">
+        <div className={` flex-row ${sofia.className}`}>
             <Image src='/img/Logo.png' alt="logo" width={247} height={62}/>
             <div className="ads flex-row">
                 <p>

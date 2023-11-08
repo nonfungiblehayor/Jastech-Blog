@@ -1,11 +1,10 @@
 import Head from "next/head";
 import { Sofia_Sans } from "next/font/google";
-import Nav from "@/components/Layout/Nav";
-import Footer from "@/components/Layout/footer";
+import { NextPageWithLayout } from "./_app";
 
 const inter = Sofia_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 
-export default function Home() {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -15,9 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={` ${inter.className}`}>
-        <Nav />
-        <Footer />
       </main>
     </>
   );
 }
+export default Home

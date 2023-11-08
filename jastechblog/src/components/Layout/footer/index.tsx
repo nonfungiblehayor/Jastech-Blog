@@ -2,6 +2,9 @@ import Image from "next/image"
 import Social from "@/components/Shared/social"
 import Link from "next/link"
 import styled from "styled-components"
+import { Sofia_Sans } from "next/font/google";
+
+const sofia = Sofia_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 
 const StyledFooter = styled.footer`
     background-color: #393939;
@@ -107,7 +110,7 @@ const Footer = () => {
         },
     ]
     return ( <StyledFooter>
-        <footer className="flex-row">
+        <footer  className={` flex-row ${sofia.className}`}>
             <div>
                 <Image src='/img/logo2.png' alt="logo" width={247} height={62} className="logo"/>
                 <p>
