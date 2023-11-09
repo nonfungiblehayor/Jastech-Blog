@@ -5,12 +5,12 @@ import { ReactElement, ReactNode } from "react";
 import DefaultLayout from "@/components/Layout/Default";
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
+  Component: NextPageWithLayout;
+};
 
 export type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
+  getLayout?: (page: ReactElement) => ReactNode;
+};
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ??
@@ -18,10 +18,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <>
         <DefaultLayout>{page}</DefaultLayout>
       </>
-    ))
-  return (
-    <>
-      {getLayout(<Component {...pageProps} />)}
-    </>
-  )
+    ));
+  return <>{getLayout(<Component {...pageProps} />)}</>;
 }

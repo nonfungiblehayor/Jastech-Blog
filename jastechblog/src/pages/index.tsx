@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Sofia_Sans } from "next/font/google";
 import { NextPageWithLayout } from "./_app";
 import News from "@/components/Home/News";
+import Movies from "@/components/Home/Movies/Movies";
 
 const inter = Sofia_Sans({ weight: ["400", "500", "700"], subsets: ["latin"] });
 
@@ -14,10 +15,11 @@ const Home: NextPageWithLayout = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={` flex-row ${inter.className}`}>
+      <main className={` ${inter.className}`}>
         <News />
+        <Movies />
       </main>
     </>
   );
-}
-export default Home
+};
+export default Home;

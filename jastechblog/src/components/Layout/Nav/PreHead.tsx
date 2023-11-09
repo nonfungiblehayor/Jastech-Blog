@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import Social from "@/components/Shared/social";
 import { useEffect, useState } from "react";
@@ -65,7 +64,7 @@ const PreHead = () => {
     setDate(dates);
     setDay(day);
   }, []);
- 
+
   return (
     <StyledPreHead>
       <section className="flex-row">
