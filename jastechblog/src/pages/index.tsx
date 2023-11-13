@@ -4,6 +4,7 @@ import { NextPageWithLayout } from "./_app";
 import News from "@/components/Home/News";
 import Movies from "@/components/Home/Movies/Movies";
 import EarnCash from "@/components/Home/Earn/earn";
+import Sport from "@/components/Home/Sport/sport";
 
 const inter = Sofia_Sans({ weight: ["400", "500", "700"], subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ const Home: NextPageWithLayout = () => {
         <News />
         <Movies />
         <EarnCash />
+        <Sport />
       </main>
     </>
   );
