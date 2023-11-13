@@ -6,28 +6,10 @@ const StyledNav = styled.header`
   justify-content: center;
   align-items: center;
   padding-top: 30px;
-  div {
+  .div {
     margin-bottom: 25px;
     width: 85vw;
     justify-content: space-between;
-  }
-  .ads {
-    margin-bottom: 0px;
-    background-image: url("/img/adsBg.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 771px;
-    height: 90px;
-    justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
-    p:nth-of-type(1) {
-      font-size: 14px;
-      font-weight: 400;
-      span {
-        color: #f65050;
-      }
-    }
   }
   .purchase-link {
     background-color: #f65050;

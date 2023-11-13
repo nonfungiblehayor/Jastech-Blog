@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import StyledNav from "./style";
 import { Sofia_Sans } from "next/font/google";
+import AirtimeBanner from "@/components/Shared/airtimeBanner";
 
 const sofia = Sofia_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 const Nav = () => {
@@ -41,18 +42,9 @@ const Nav = () => {
       <PreHead />
       <StyledNav>
         <header>
-          <div className={` flex-row ${sofia.className}`}>
+          <div className={` flex-row ${sofia.className} div`}>
             <Image src="/img/Logo.png" alt="logo" width={247} height={62} />
-            <div className="ads flex-row">
-              <p>
-                Best Selling Data and Airtime <br />
-                Vendor of all time <br />
-                <span>At affordable rate</span>
-              </p>
-              <Link href="/">
-                <p className="purchase-link">Purchase Now</p>
-              </Link>
-            </div>
+            <AirtimeBanner />
           </div>
           <nav className="flex-row">
             {links.map((item, index) => (
