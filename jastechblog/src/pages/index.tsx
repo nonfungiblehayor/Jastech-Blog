@@ -3,6 +3,7 @@ import { Sofia_Sans } from "next/font/google";
 import { NextPageWithLayout } from "./_app";
 import News from "@/components/Home/News";
 import Movies from "@/components/Home/Movies/Movies";
+import EarnCash from "@/components/Home/Earn/earn";
 
 const inter = Sofia_Sans({ weight: ["400", "500", "700"], subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ const Home: NextPageWithLayout = () => {
       <main className={` ${inter.className}`}>
         <News />
         <Movies />
+        <EarnCash />
       </main>
     </>
   );

@@ -20,10 +20,6 @@ const Nav = () => {
       link: "",
     },
     {
-      text: "Technology",
-      link: "",
-    },
-    {
       text: "Movies",
       link: "",
     },
