@@ -24,7 +24,7 @@ const Nav = () => {
       link: "",
     },
     {
-      text: "Ads",
+      text: "Advertise your product",
       link: "",
     },
     {
