@@ -26,6 +26,24 @@ const StyledPreHead = styled.section`
   div:nth-of-type(2) {
     gap: 12px;
   }
+  @media (max-width: 768px) {
+    height: 32px;
+    div:nth-of-type(2) {
+      display: none;
+    }
+    p:nth-of-type(2) {
+      width: 35vw;
+    }
+    p,
+    h1 {
+      font-size: 8px;
+    }
+    h1 {
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 32px;
+    }
+  }
 `;
 const PreHead = () => {
   const [day, setDay] = useState<string>();

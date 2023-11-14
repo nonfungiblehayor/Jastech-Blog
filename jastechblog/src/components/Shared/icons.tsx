@@ -329,6 +329,20 @@ export default function Icons({
           </defs>
         </svg>
       );
+    case "hamburger":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 10"
+          fill="none"
+        >
+          <rect width="16" height="2" rx="1" fill="red" />
+          <rect y="4" width="16" height="2" rx="1" fill="red" />
+          <rect y="8" width="16" height="2" rx="1" fill="red" />
+        </svg>
+      );
     default:
       return null;
   }

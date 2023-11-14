@@ -71,6 +71,43 @@ const StyledFooter = styled.footer`
     color: #fff;
     font-weight: 700;
   }
+  @media (max-width: 768px) {
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav {
+      grid-template-columns: auto auto auto;
+    }
+    div:nth-of-type(1) {
+      align-self: center;
+      p {
+        text-align: center;
+      }
+      div:nth-of-type(1) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+    div:nth-of-type(2) {
+      align-self: center;
+      margin-top: 0px;
+      h2 {
+        display: none;
+      }
+    }
+    div:nth-of-type(3) {
+      align-self: center;
+      p,
+      h2 {
+        text-align: center;
+      }
+    }
+  }
 `;
 const Footer = () => {
   const tags = [
@@ -112,7 +149,7 @@ const Footer = () => {
   ];
   return (
     <StyledFooter>
-      <footer className={` flex-row ${sofia.className}`}>
+      <footer className={` flex-row ${sofia.className} flex-col`}>
         <div>
           <Image
             src="/img/logo2.png"
