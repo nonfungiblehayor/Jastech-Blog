@@ -71,5 +71,34 @@ const StyledMoviesTab = styled.div`
       }
     }
   }
+  @media (max-width: 768px) {
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      width: 85vw;
+      overflow-x: scroll;
+      margin-bottom: 15px;
+      p {
+        width: 80px;
+        text-align: center;
+      }
+    }
+    .stand-alone {
+      display: none;
+    }
+    .container {
+      align-items: center;
+      gap: 10px;
+    }
+    .each {
+      width: 85vw;
+      gap: 10px;
+      h2 {
+        margin-top: -5px;
+      }
+    }
+  }
 `;
 export default StyledMoviesTab;

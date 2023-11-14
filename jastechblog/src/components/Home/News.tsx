@@ -6,6 +6,7 @@ const inter = Sofia({ weight: ["400"], subsets: ["latin"] });
 const StyledNews = styled.section`
   width: 85vw;
   padding-top: 25px;
+  margin-bottom: 25px;
   .big-frame,
   .small-frames,
   .medium-frames {
@@ -65,6 +66,34 @@ const StyledNews = styled.section`
     background-size: cover;
     margin-right: 0px;
   }
+  @media (max-width: 768px) {
+    padding-top: 15px;
+    .mobile {
+      display: flex;
+      flex-direction: column;
+    }
+    .big-frame {
+      width: 85vw;
+      height: 270px;
+      padding-bottom: 20px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15px;
+      gap: 15px;
+    }
+    .small-frames,
+    .medium-frames {
+      width: 85vw;
+      height: 150px;
+    }
+    h3 {
+      font-size: 22px;
+      width: 65vw;
+    }
+  }
 `;
 const News = () => {
   const news = [
@@ -89,7 +118,7 @@ const News = () => {
   ];
   return (
     <StyledNews>
-      <section className="flex-row">
+      <section className="flex-row mobile">
         <div className="big-frame">
           <p className="news-type">News type</p>
           <h3>

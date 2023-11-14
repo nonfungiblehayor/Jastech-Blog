@@ -20,9 +20,9 @@ const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={` ${inter.className}`}>
-        {/* <News /> */}
-        {/* <Movies />
-        <EarnCash />
+        <News />
+        <Movies />
+        {/*  <EarnCash />
         <Sport />
         <Ads />
         <Airtime /> */}

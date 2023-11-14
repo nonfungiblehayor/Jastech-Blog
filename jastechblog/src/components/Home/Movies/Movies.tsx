@@ -12,6 +12,12 @@ const StyledMovies = styled.section`
   width: 85vw;
   padding-top: 40px;
   padding-bottom: 40px;
+  @media (max-width: 768px) {
+    .flex {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 const Movies = () => {
   return (

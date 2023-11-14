@@ -85,7 +85,13 @@ const MovieTabs = () => {
           <div className="container">
             {otherNews.map((item, index) => (
               <div key={index} className="each flex-row">
-                <Image src={item.img} alt="bg" width={90} height={70} />
+                <Image
+                  src={item.img}
+                  alt="bg"
+                  width={90}
+                  height={70}
+                  className="img"
+                />
                 <h2>
                   <span>{item.date}</span>
                   {item.heading}

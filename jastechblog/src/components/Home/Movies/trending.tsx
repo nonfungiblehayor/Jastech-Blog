@@ -37,6 +37,10 @@ const StyledTrend = styled.div`
       color: rgba(57, 57, 57, 0.6);
     }
   }
+  @media (max-width: 768px) {
+    width: 85vw;
+    margin-top: 20px;
+  }
 `;
 const Trending = () => {
   const Trendtabs = ["Trending", "Recent", "Most Views"];
