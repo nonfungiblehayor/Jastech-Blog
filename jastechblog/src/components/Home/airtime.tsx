@@ -29,6 +29,14 @@ const StyledAdShow = styled.div`
     color: #f65050;
     padding-bottom: 10px;
   }
+  @media (max-width: 768px) {
+    p {
+      width: 85vw;
+    }
+    .stand-alone {
+      width: 85vw;
+    }
+  }
 `;
 
 const StyledAirtime = styled.section`
@@ -48,13 +56,23 @@ const StyledAirtime = styled.section`
     flex-direction: column;
     gap: 20px;
   }
+  @media (max-width: 768px) {
+    .mobile {
+      display: flex;
+      flex-direction: column;
+    }
+    .parent,
+    h1 {
+      width: 85vw;
+    }
+  }
 `;
 
 const AdsShow = () => {
   return (
     <StyledAdShow>
       <div>
-        <p>Offers</p>
+        <p>Special Offers</p>
         <div className="stand-alone">10gb for #500</div>
       </div>
     </StyledAdShow>
@@ -64,7 +82,7 @@ const Airtime = () => {
   return (
     <StyledAirtime>
       <section
-        className="flex-row"
+        className="flex-row mobile"
         style={{ alignItems: "flex-start", gap: "10px" }}
       >
         <div className="parent">

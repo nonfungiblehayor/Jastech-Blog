@@ -73,7 +73,13 @@ const MovieTabs = () => {
         </div>
         <div className="top-movies flex-row">
           <div className="stand-alone">
-            <Image src="/img/bg1.png" alt="bg" width={393} height={250} />
+            <Image
+              src="/img/bg1.png"
+              alt="bg"
+              width={393}
+              height={250}
+              className="img-frame"
+            />
             <span>27 Dec 2020</span>
             <h2>Now Is the Time to Think About Your Small Business Success</h2>
             <p>

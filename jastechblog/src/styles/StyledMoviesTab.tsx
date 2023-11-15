@@ -7,7 +7,7 @@ const StyledMoviesTab = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 820px;
+    width: 920px;
     align-items: center;
     border-bottom: 1px solid #000;
     padding-bottom: 10px;
@@ -85,8 +85,23 @@ const StyledMoviesTab = styled.div`
         text-align: center;
       }
     }
+    .top-movies {
+      display: flex;
+      flex-direction: column;
+    }
+    .img-frame {
+      width: 80vw;
+    }
     .stand-alone {
-      display: none;
+      width: 85vw;
+      align-items: flex-start;
+      span,
+      p {
+        width: 80vw;
+      }
+    }
+    h2 {
+      width: 80vw;
     }
     .container {
       align-items: center;
@@ -95,6 +110,7 @@ const StyledMoviesTab = styled.div`
     .each {
       width: 85vw;
       gap: 10px;
+      justify-content: flex-start;
       h2 {
         margin-top: -5px;
       }

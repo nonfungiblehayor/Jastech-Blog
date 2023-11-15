@@ -22,10 +22,10 @@ const Home: NextPageWithLayout = () => {
       <main className={` ${inter.className}`}>
         <News />
         <Movies />
-        {/*  <EarnCash />
+        <EarnCash />
         <Sport />
         <Ads />
-        <Airtime /> */}
+        <Airtime />
       </main>
     </>
   );

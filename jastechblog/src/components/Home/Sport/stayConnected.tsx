@@ -60,6 +60,9 @@ const StyledSport = styled.div`
     border: none;
     height: 40px;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 const StayConnected = () => {
   const socials = [

@@ -47,6 +47,17 @@ const StyledAds = styled.section`
     font-weight: 500;
     width: 600px;
   }
+  @media (max-width: 768px) {
+    .wide-frame {
+      background-size: cover;
+      height: 300px;
+      background-position: center;
+    }
+    h2 {
+      font-size: 22px;
+      width: 75vw;
+    }
+  }
 `;
 const Ads = () => {
   const ads = [

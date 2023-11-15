@@ -26,6 +26,7 @@ const StyledEarn = styled.section`
     margin-top: 25px;
     margin-bottom: 25px;
     justify-content: flex-end;
+    padding-left: 10px;
   }
   h2 {
     font-size: 24px;
@@ -47,6 +48,21 @@ const StyledEarn = styled.section`
   }
   .normal-frame {
     gap: 15px;
+  }
+  @media (max-width: 768px) {
+    .wide-frame {
+      width: 85vw;
+      height: 250px;
+    }
+    h2 {
+      font-size: 14px;
+      width: 300px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
   }
 `;
 const EarnCash = () => {

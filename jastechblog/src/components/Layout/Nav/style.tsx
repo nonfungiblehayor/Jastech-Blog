@@ -56,10 +56,11 @@ const StyledNav = styled.header`
       gap: 20px;
       padding-top: 20px;
       padding-bottom: 20px;
-      align-self: center;
-      width: 83vw;
+      align-self: flex-end;
+      width: 63vw;
       margin-top: -15px;
-      border-radius: 6px;
+      z-index: 999;
+      margin-bottom: -275px;
     }
   }
 `;
