@@ -16,27 +16,27 @@ const Nav = () => {
     },
     {
       text: "News",
-      link: "",
+      link: "/news",
     },
     {
       text: "Sport",
-      link: "",
+      link: "/sport",
     },
     {
       text: "Movies",
-      link: "",
+      link: "/movies",
     },
     {
       text: "Advertise your product",
-      link: "",
+      link: "/ads",
     },
     {
       text: "Airtime & Data",
-      link: "",
+      link: "/airtime",
     },
     {
       text: "Earn cash",
-      link: "",
+      link: "/earn",
     },
   ];
   const linkRef = useRef<any>();
