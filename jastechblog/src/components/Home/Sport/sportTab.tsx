@@ -1,36 +1,7 @@
 import Image from "next/image";
 import StyledMoviesTab from "@/styles/StyledMoviesTab";
+import { sportTabs} from "@/components/Shared/tabs";
 const SportTab = () => {
-  const tabs = [
-    {
-      text: "All",
-      color: "#F65050",
-    },
-    {
-      text: "Football",
-      color: "#A56CBD",
-    },
-    {
-      text: "Basketball",
-      color: "#08F",
-    },
-    {
-      text: "Cricket",
-      color: "#49EFC8",
-    },
-    {
-      text: "Tennis",
-      color: "#2ECC71",
-    },
-    {
-      text: "Formular1",
-      color: "#997C00",
-    },
-    {
-      text: "Boxing",
-      color: "#08F",
-    },
-  ];
   const otherNews = [
     {
       img: "/img/bg1.png",
@@ -64,7 +35,7 @@ const SportTab = () => {
         <div className="tabs">
           <h1>Sport</h1>
           <nav className="flex-row">
-            {tabs.map((item, index) => (
+            {sportTabs.map((item, index) => (
               <p style={{ backgroundColor: item.color }} key={index}>
                 {item.text}
               </p>

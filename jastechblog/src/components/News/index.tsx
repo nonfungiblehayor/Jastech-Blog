@@ -1,6 +1,5 @@
 import Image from "next/image";
 import StyledNewsPage from "@/styles/StyledNewsPage";
-import { url } from "inspector";
 const NewsPage = () => {
   const topNews = [
     {
