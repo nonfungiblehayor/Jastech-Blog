@@ -1,6 +1,6 @@
 import Image from "next/image";
 import StyledMoviesTab from "@/styles/StyledMoviesTab";
-import { sportTabs} from "@/components/Shared/tabs";
+import { sportTabs } from "@/components/Shared/tabs";
 const SportTab = () => {
   const otherNews = [
     {
