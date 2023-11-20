@@ -1,55 +1,55 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import StyledMovies from "@/styles/StyledMovies";
-const ActionMovies = () => {
-  const ActionMovies = [
+const Series = () => {
+  const seriesMovies = [
     {
-      title: "Strong Girl Nam-soon S01 (Episode 14)",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
     {
-      title: "Fast & furious 2",
+      title: "Goosebumps S01 (Complete)|",
       image: "/img/movie.png",
       link: "https://nkiri.com/fast-and-furious-collection-1-6-download-hollywood-movie/",
     },
@@ -57,9 +57,9 @@ const ActionMovies = () => {
   return (
     <StyledMovies>
       <div>
-        <h1>Action Movies</h1>
+        <h1>Tv-series</h1>
         <div className="action-movies">
-          {ActionMovies.map((item, index) => (
+          {seriesMovies.map((item, index) => (
             <Link href={item.link} key={index}>
               <div className="each">
                 <Image
@@ -81,4 +81,4 @@ const ActionMovies = () => {
     </StyledMovies>
   );
 };
-export default ActionMovies;
+export default Series;
