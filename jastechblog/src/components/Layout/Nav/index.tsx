@@ -6,6 +6,7 @@ import { Sofia_Sans } from "next/font/google";
 import AirtimeBanner from "@/components/Shared/airtimeBanner";
 import Icons from "@/components/Shared/icons";
 import { useRef } from "react";
+import Head from "next/head";
 
 const sofia = Sofia_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 const Nav = () => {
@@ -52,6 +53,12 @@ const Nav = () => {
   };
   return (
     <>
+    <Head>
+        <title>Jastech blog</title>
+        <meta name="description" content="Jatech blog" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <PreHead />
       <StyledNav>
         <header>
