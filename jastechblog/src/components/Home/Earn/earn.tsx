@@ -7,26 +7,14 @@ const StyledEarn = styled.section`
   align-items: center;
   color: #000;
   padding-bottom: 30px;
+  margin-bottom: 60px;
   h1 {
-    width: 87vw;
+    width: 85vw;
     border-bottom: 1px solid #000;
     padding-bottom: 15px;
     color: #f65050;
     font-size: 24px;
     font-weight: 500;
-  }
-  .wide-frame {
-    width: 87vw;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    background-image: url("/img/bg1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    justify-content: flex-end;
-    padding-left: 10px;
   }
   h2 {
     font-size: 24px;
@@ -38,8 +26,12 @@ const StyledEarn = styled.section`
     font-size: 18px;
     font-weight: 400;
   }
-  .conainer {
+  .container {
     width: 85vw;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 50px;
+    row-gap: 20px;
   }
   h3 {
     font-size: 15px;
@@ -47,7 +39,8 @@ const StyledEarn = styled.section`
     width: 200px;
   }
   .normal-frame {
-    gap: 15px;
+    gap: 10px;
+    justify-content: flex-start;
   }
   @media (max-width: 768px) {
     .wide-frame {
@@ -79,15 +72,28 @@ const EarnCash = () => {
       img: "/img/bg1.png",
       heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
     },
+    {
+      img: "/img/bg1.png",
+      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
+    },
+    {
+      img: "/img/bg1.png",
+      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
+    },
+    {
+      img: "/img/bg1.png",
+      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
+    },
+    {
+      img: "/img/bg1.png",
+      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
+    },
   ];
   return (
     <StyledEarn>
       <section>
         <h1>Earn Cash</h1>
-        <div className="wide-frame">
-          <h2>Amanda Seyfried became‘really obsessed’ with ghost stories</h2>
-        </div>
-        <div className="container flex-row">
+        <div className="container">
           {updates.map((item, index) => (
             <div className="normal-frame flex-row" key={index}>
               <Image src={item.img} alt="frame" width={130} height={100} />

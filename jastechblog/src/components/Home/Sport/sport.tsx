@@ -12,7 +12,7 @@ const Sport = () => {
       }}
     >
       <SportTab />
-      <StayConnected />
+      <StayConnected showAds={false}/>
     </section>
   );
 };

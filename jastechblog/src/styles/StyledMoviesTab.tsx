@@ -7,7 +7,7 @@ const StyledMoviesTab = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 920px;
+    width: 60vw;
     align-items: center;
     border-bottom: 1px solid #000;
     padding-bottom: 10px;

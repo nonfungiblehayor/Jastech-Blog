@@ -6,27 +6,6 @@ const StyledNewsPage = styled.section`
   align-items: center;
   padding-top: 25px;
   padding-bottom: 25px;
-  .tabs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 85vw;
-    align-items: center;
-    border-bottom: 1px solid #000;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    p {
-      font-size: 12px;
-      font-weight: 400;
-      padding: 10px 15px;
-      margin-right: 10px;
-    }
-  }
-  h1 {
-    color: #f65050;
-    font-size: 24px;
-    font-weight: 500;
-  }
   h1 {
     width: 85vw;
     border-bottom: 1px solid #000;
@@ -44,17 +23,19 @@ const StyledNewsPage = styled.section`
     width: 85vw;
     padding-top: 20px;
     padding-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
   }
   .each-news {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 420px;
+    width: 26.3vw;
     height: auto;
     gap: 10px;
   }
   .frame {
-    width: 420px;
+    width: 26.3vw;
     height: 250px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -74,7 +55,7 @@ const StyledNewsPage = styled.section`
     margin-left: 15px;
   }
   .thread {
-    width: 370px;
+    width: 350px;
     color: rgba(57, 57, 57, 0.6);
     font-size: 14px;
     font-weight: 400;
@@ -83,7 +64,7 @@ const StyledNewsPage = styled.section`
     color: #000;
     font-size: 24px;
     font-weight: 500;
-    width: 420px;
+    width: 350px;
   }
   .other-news {
     display: grid;

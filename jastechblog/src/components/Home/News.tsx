@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Sofia } from "next/font/google";
+import Link from "next/link";
 
 const inter = Sofia({ weight: ["400"], subsets: ["latin"] });
 
@@ -128,6 +129,7 @@ const News = () => {
         </div>
         <div className="container">
           {news.map((item, index) => (
+            <Link href='/each'>
             <div className={item.className} key={index}>
               <p className="news-type">{item.type}</p>
               <h2 className="small-frame-text">
@@ -135,6 +137,7 @@ const News = () => {
                 {item.headlines}
               </h2>
             </div>
+            </Link>
           ))}
         </div>
       </section>

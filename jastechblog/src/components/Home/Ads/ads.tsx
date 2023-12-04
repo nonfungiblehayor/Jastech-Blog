@@ -65,14 +65,6 @@ const Ads = () => {
       type: "Free Ads",
       heading: "Play This Game for Free on Epic Store this Weekend",
     },
-    {
-      type: "Paid Ads",
-      heading: "Play This Game for Free on Epic Store this Weekend",
-    },
-    {
-      type: "Paid Ads",
-      heading: "Play This Game for Free on Epic Store this Weekend",
-    },
   ];
   return (
     <StyledAds>

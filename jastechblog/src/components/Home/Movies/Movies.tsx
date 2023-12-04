@@ -6,7 +6,7 @@ const StyledMovies = styled.section`
   .flex {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 10px;
   }
   width: 85vw;
