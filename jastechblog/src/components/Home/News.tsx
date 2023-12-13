@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Sofia } from "next/font/google";
 import Link from "next/link";
+import { api } from "@/pages/api";
+import { useEffect, useState } from "react";
 
 const inter = Sofia({ weight: ["400"], subsets: ["latin"] });
 
@@ -97,46 +99,52 @@ const StyledNews = styled.section`
   }
 `;
 const News = () => {
-  const news = [
-    {
-      type: "News-type",
-      date: "10-3-2024",
-      headlines: " After all is said and done, more is done",
-      className: "small-frames",
-    },
-    {
-      type: "News-type",
-      date: "10-3-2024",
-      headlines: " After all is said and done, more is done",
-      className: "small-frames",
-    },
-    {
-      type: "News-type",
-      date: "10-3-2024",
-      headlines: " After all is said and done, more is done",
-      className: "medium-frames",
-    },
-  ];
+  const newsId = process.env.NEXT_PUBLIC_NEWS_ID;
+  const [mainNews, setMainNews] = useState<
+    [
+      {
+        fields: {
+          Headline: "";
+          Date: "";
+          NewsType: "";
+          Summary: "";
+        };
+      },
+    ]
+  >();
+  const news = mainNews?.slice(1, 6);
+  const getNews = () => {
+    api
+      .get(`${newsId}?maxRecords=5`)
+      .then((response) => setMainNews(response.data.records))
+      .catch((error) => console.error(error));
+  };
+  useEffect(() => {
+    getNews();
+  }, []);
+
   return (
     <StyledNews>
       <section className="flex-row mobile">
         <div className="big-frame">
-          <p className="news-type">News type</p>
+          <p className="news-type">
+            {mainNews ? mainNews[0].fields.NewsType : ""}
+          </p>
           <h3>
-            <p>Date</p>
-            After all is said and done, more is done
+            <p>{mainNews ? mainNews[0].fields.Date : ""}</p>
+            {mainNews ? mainNews[0].fields.Headline : ""}
           </h3>
         </div>
         <div className="container">
-          {news.map((item, index) => (
-            <Link href='/each'>
-            <div className={item.className} key={index}>
-              <p className="news-type">{item.type}</p>
-              <h2 className="small-frame-text">
-                <p>{item.date}</p>
-                {item.headlines}
-              </h2>
-            </div>
+          {news?.map((item, index) => (
+            <Link href="/each">
+              <div className="small-frames" key={index}>
+                <p className="news-type">{item.fields.NewsType}</p>
+                <h2 className="small-frame-text">
+                  <p>{item.fields.Date}</p>
+                  {item.fields.Headline}
+                </h2>
+              </div>
             </Link>
           ))}
         </div>

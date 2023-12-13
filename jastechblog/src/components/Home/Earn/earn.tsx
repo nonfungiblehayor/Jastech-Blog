@@ -1,5 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { api } from "@/pages/api";
+import { useEffect, useState } from "react";
 
 const StyledEarn = styled.section`
   display: flex;
@@ -32,6 +34,7 @@ const StyledEarn = styled.section`
     grid-template-columns: auto auto auto;
     padding-top: 50px;
     row-gap: 20px;
+    column-gap: 10px;
   }
   h3 {
     font-size: 15px;
@@ -41,6 +44,8 @@ const StyledEarn = styled.section`
   .normal-frame {
     gap: 10px;
     justify-content: flex-start;
+    border: 1px solid #000;
+    padding: 10px;
   }
   @media (max-width: 768px) {
     .wide-frame {
@@ -59,45 +64,53 @@ const StyledEarn = styled.section`
   }
 `;
 const EarnCash = () => {
-  const updates = [
-    {
-      img: "/img/bg1.png",
-      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
-    },
-    {
-      img: "/img/bg1.png",
-      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
-    },
-    {
-      img: "/img/bg1.png",
-      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
-    },
-    {
-      img: "/img/bg1.png",
-      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
-    },
-    {
-      img: "/img/bg1.png",
-      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
-    },
-    {
-      img: "/img/bg1.png",
-      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
-    },
-    {
-      img: "/img/bg1.png",
-      heading: "Amanda Seyfried became ‘really obsessed’ with ghost stories",
-    },
-  ];
+  const earnId = process.env.NEXT_PUBLIC_EARNING_ID;
+  const [earning, setEarning] = useState<
+    [
+      {
+        fields: {
+          Update: "";
+          Type: "";
+          Details: "";
+          Image: [
+            {
+              url: "";
+            },
+          ];
+          Date: "";
+        };
+      },
+    ]
+  >();
+  const getUpdate = () => {
+    api
+      .get(`${earnId}?maxRecords=6`)
+      .then(
+        (response) => (
+          setEarning(response.data.records), console.log(response)
+        ),
+      )
+      .catch((error) => console.error(error));
+  };
+  useEffect(() => {
+    getUpdate();
+  }, []);
   return (
     <StyledEarn>
       <section>
         <h1>Earn Cash</h1>
         <div className="container">
-          {updates.map((item, index) => (
+          {earning?.map((item, index) => (
             <div className="normal-frame flex-row" key={index}>
-              <Image src={item.img} alt="frame" width={130} height={100} />
-              <h3>{item.heading}</h3>
+              <Image
+                src={item.fields.Image[0].url}
+                alt="frame"
+                width={100}
+                height={100}
+              />
+              <h3>
+                {item.fields.Update} {item.fields.Type}
+              </h3>
             </div>
           ))}
         </div>

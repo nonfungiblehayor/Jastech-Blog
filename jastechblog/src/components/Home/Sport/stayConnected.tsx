@@ -27,11 +27,11 @@ const StyledSport = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('/img/bg1.png');
+    background-image: url("/img/bg1.png");
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 20px;
-    h1{
+    h1 {
       color: #fff;
     }
   }
@@ -79,11 +79,7 @@ const StyledSport = styled.div`
     display: none;
   }
 `;
-const StayConnected = ({
-  showAds
-}: {
-  showAds: boolean
-}) => {
+const StayConnected = ({ showAds }: { showAds: boolean }) => {
   const socials = [
     {
       type: "facebook",
@@ -129,11 +125,13 @@ const StayConnected = ({
           <input type="email" placeholder="Your email address" />
           <button>Subscribe</button>
         </div>
-        {showAds ? 
-        <div className="ads-div">
-          <h1>Ads</h1>
-        </div> : ''
-        }
+        {showAds ? (
+          <div className="ads-div">
+            <h1>Ads</h1>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </StyledSport>
   );

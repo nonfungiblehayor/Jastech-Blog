@@ -7,6 +7,13 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'v5.airtableusercontent.com',
+      },
+    ],
+  },
 };
-
 module.exports = nextConfig;

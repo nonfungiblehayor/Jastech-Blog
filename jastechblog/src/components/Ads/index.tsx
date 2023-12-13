@@ -90,12 +90,25 @@ const AdsPage = () => {
               required={false}
             />
           </div>
-          <div className="duration">
+          <div className=" flex-row duration">
             <Input
               style="half-width"
               label="Duration"
               type="text"
               placeholder="Days/Weeks/Months"
+              required
+            />
+            <Input
+              style="half-width"
+              label="Tik-tok handle"
+              type="text"
+              placeholder="https://tik-tok.com/name"
+              required={false}
+            />
+            <Input
+              style="half-width special"
+              label="Video"
+              type="file"
               required
             />
           </div>

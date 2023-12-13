@@ -84,7 +84,7 @@ const EarnPage = () => {
       <section>
         <div className="container">
           {updates.map((item, index) => (
-            <Link href={item.link}  key={index}>
+            <Link href={item.link} key={index}>
               <div className="each">
                 <Image
                   src={item.img}
