@@ -112,8 +112,8 @@ const News = () => {
       <section className="flex-row mobile">
         <div className="container">
           {news?.map((item, index) => (
-            <Link href="/each">
-              <div className="small-frames" key={index}>
+            <Link href="/each" key={index}>
+              <div className="small-frames">
                 <p className="news-type">{item.fields.NewsType}</p>
                 <h2 className="small-frame-text">
                   <p style={{ marginBottom: "10px" }}>{item.fields.Date}</p>
