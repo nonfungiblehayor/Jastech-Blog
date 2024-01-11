@@ -18,16 +18,6 @@ const SportTab = () => {
       date: "27 Dec 2020",
       heading: "Penn’s expanding political climate gears up for 2020 election",
     },
-    {
-      img: "/img/bg1.png",
-      date: "27 Dec 2020",
-      heading: "Penn’s expanding political climate gears up for 2020 election",
-    },
-    {
-      img: "/img/bg1.png",
-      date: "27 Dec 2020",
-      heading: "Penn’s expanding political climate gears up for 2020 election",
-    },
   ];
   return (
     <StyledMoviesTab>
@@ -43,26 +33,17 @@ const SportTab = () => {
           </nav>
         </div>
         <div className="top-movies flex-row">
-          <div className="stand-alone">
-            <Image
-              src="/img/bg1.png"
-              alt="bg"
-              width={393}
-              height={250}
-              className="img-frame"
-            />
-            <span>27 Dec 2020</span>
-            <h2>Now Is the Time to Think About Your Small Business Success</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus
-              lobortis augue condimentum maecenas. Metus at in fames vitae
-              posuere ut vel vulputate....
-            </p>
-          </div>
-          <div className="container">
+          <div className="sport-container">
             {otherNews.map((item, index) => (
-              <div key={index} className="each flex-row">
-                <Image src={item.img} alt="bg" width={90} height={70} />
+              <div key={index} className="each-sport">
+                <p className="sport-type">Football</p>
+                <Image
+                  src={item.img}
+                  alt="bg"
+                  width={400}
+                  height={270}
+                  className="sport-img"
+                />
                 <h2>
                   <span>{item.date}</span>
                   {item.heading}

@@ -7,7 +7,7 @@ const StyledMoviesTab = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 60vw;
+    width: 85vw;
     align-items: center;
     border-bottom: 1px solid #000;
     padding-bottom: 10px;
@@ -50,17 +50,50 @@ const StyledMoviesTab = styled.div`
     margin-top: 15px;
   }
   .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 25px;
+  }
+  .sport-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    width: 85vw;
+    gap: 20px;
+  }
+  .each-sport {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 26vw;
+    height: auto;
+    padding: 10px 10px 20px 10px;
+    h2 {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      span {
+        font-weight: 400;
+      }
+    }
+    .sport-type {
+      background-color: #a56cbd;
+      padding: 5px 10px;
+      width: 100px;
+      text-align: center;
+      margin-bottom: -30px;
+      z-index: 999;
+    }
   }
   .each {
-    width: 380px;
+    width: 192px;
     margin-top: 15px;
     h2 {
       font-size: 15px;
       font-weight: 400;
-      width: 250px;
+      width: 170px;
       display: flex;
       flex-direction: column;
       color: #000;
@@ -69,6 +102,20 @@ const StyledMoviesTab = styled.div`
         font-weight: 400;
         color: #393939;
       }
+    }
+  }
+  @media (max-width: 1450px) and (min-width: 1200px) {
+    .sport-container {
+      gap: 10px;
+    }
+    .each-sport {
+      width: 300px;
+      h2 {
+        width: 280px;
+      }
+    }
+    .sport-img {
+      width: 300px;
     }
   }
   @media (max-width: 768px) {
@@ -104,16 +151,31 @@ const StyledMoviesTab = styled.div`
       width: 80vw;
     }
     .container {
-      align-items: center;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      gap: 15px;
+    }
+    .sport-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .sport-img {
+      width: 80vw;
     }
     .each {
-      width: 85vw;
+      width: 45vw;
       gap: 10px;
+      display: flex;
+      flex-direction: column;
       justify-content: flex-start;
       h2 {
-        margin-top: -5px;
+        margin-top: 5px;
+        font-size: 12px;
       }
+    }
+    .img {
+      width: 45vw;
     }
   }
 `;

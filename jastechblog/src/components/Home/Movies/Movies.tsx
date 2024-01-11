@@ -24,7 +24,6 @@ const Movies = () => {
     <StyledMovies>
       <section className="flex">
         <MovieTabs />
-        <Trending />
       </section>
     </StyledMovies>
   );

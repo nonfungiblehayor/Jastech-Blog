@@ -20,7 +20,7 @@ const Home: NextPageWithLayout = () => {
         <Sport />
         <Ads />
         <EarnCash />
-        <Airtime />
+        {/* <Airtime /> */}
       </main>
     </>
   );

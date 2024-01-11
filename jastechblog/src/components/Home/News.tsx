@@ -10,29 +10,16 @@ const StyledNews = styled.section`
   width: 85vw;
   padding-top: 25px;
   margin-bottom: 25px;
-  .big-frame,
-  .small-frames,
-  .medium-frames {
-    width: 70vw;
-    height: 570px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-image: url("/img/bg1.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 25px 20px 30px 20px;
-  }
   .news-type {
-    width: 64px;
+    width: 84px;
     height: 22px;
     background-color: #08f;
     text-align: center;
     color: #fff;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 400;
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
   }
   h3 {
     font-size: 36px;
@@ -44,41 +31,40 @@ const StyledNews = styled.section`
     }
   }
   .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    width: 100vw;
+    gap: 20px;
   }
   .small-frames {
-    width: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26vw;
     height: 278px;
+    background-image: url("/img/bg1.png");
+    background-repeat: no-repeat;
     padding: 10px 10px 20px 10px;
     background-size: cover;
     margin-right: 0px;
   }
   .small-frame-text {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 500;
-    width: 200px;
+    width: 300px;
+    line-height: 25px;
   }
-  .medium-frames {
-    width: 485px;
-    height: 278px;
-    background-color: red;
-    background-size: cover;
-    margin-right: 0px;
+  @media (max-width: 1450px) and (min-width: 1200px) {
+    .small-frames {
+      width: 350px;
+    }
   }
   @media (max-width: 768px) {
     padding-top: 15px;
     .mobile {
       display: flex;
       flex-direction: column;
-    }
-    .big-frame {
-      width: 85vw;
-      height: 270px;
-      padding-bottom: 20px;
     }
     .container {
       display: flex;
@@ -87,14 +73,12 @@ const StyledNews = styled.section`
       margin-top: 15px;
       gap: 15px;
     }
-    .small-frames,
-    .medium-frames {
+    .small-frames {
       width: 85vw;
-      height: 150px;
+      height: 250px;
     }
-    h3 {
-      font-size: 22px;
-      width: 65vw;
+    .small-frame-text {
+      font-size: 12px;
     }
   }
 `;
@@ -115,7 +99,7 @@ const News = () => {
   const news = mainNews?.slice(1, 6);
   const getNews = () => {
     api
-      .get(`${newsId}?maxRecords=5`)
+      .get(`${newsId}?maxRecords=4`)
       .then((response) => setMainNews(response.data.records))
       .catch((error) => console.error(error));
   };
@@ -126,22 +110,13 @@ const News = () => {
   return (
     <StyledNews>
       <section className="flex-row mobile">
-        <div className="big-frame">
-          <p className="news-type">
-            {mainNews ? mainNews[0].fields.NewsType : ""}
-          </p>
-          <h3>
-            <p>{mainNews ? mainNews[0].fields.Date : ""}</p>
-            {mainNews ? mainNews[0].fields.Headline : ""}
-          </h3>
-        </div>
         <div className="container">
           {news?.map((item, index) => (
             <Link href="/each">
               <div className="small-frames" key={index}>
                 <p className="news-type">{item.fields.NewsType}</p>
                 <h2 className="small-frame-text">
-                  <p>{item.fields.Date}</p>
+                  <p style={{ marginBottom: "10px" }}>{item.fields.Date}</p>
                   {item.fields.Headline}
                 </h2>
               </div>

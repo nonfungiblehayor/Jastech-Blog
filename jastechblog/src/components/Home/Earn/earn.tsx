@@ -85,11 +85,7 @@ const EarnCash = () => {
   const getUpdate = () => {
     api
       .get(`${earnId}?maxRecords=6`)
-      .then(
-        (response) => (
-          setEarning(response.data.records), console.log(response)
-        ),
-      )
+      .then((response) => setEarning(response.data.records))
       .catch((error) => console.error(error));
   };
   useEffect(() => {

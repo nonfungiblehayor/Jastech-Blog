@@ -1,34 +1,36 @@
 import Image from "next/image";
 import StyledMoviesTab from "@/styles/StyledMoviesTab";
 import { movieTabs } from "@/components/Shared/tabs";
+import { api } from "@/pages/api";
+import { useEffect, useState } from "react";
 const MovieTabs = () => {
-  const otherNews = [
-    {
-      img: "/img/bg1.png",
-      date: "27 Dec 2020",
-      heading: "Penn’s expanding political climate gears up for 2020 election",
-    },
-    {
-      img: "/img/bg1.png",
-      date: "27 Dec 2020",
-      heading: "Penn’s expanding political climate gears up for 2020 election",
-    },
-    {
-      img: "/img/bg1.png",
-      date: "27 Dec 2020",
-      heading: "Penn’s expanding political climate gears up for 2020 election",
-    },
-    {
-      img: "/img/bg1.png",
-      date: "27 Dec 2020",
-      heading: "Penn’s expanding political climate gears up for 2020 election",
-    },
-    {
-      img: "/img/bg1.png",
-      date: "27 Dec 2020",
-      heading: "Penn’s expanding political climate gears up for 2020 election",
-    },
-  ];
+  const movieId = process.env.NEXT_PUBLIC_MOVIES_ID;
+  const [movies, setMovies] = useState<
+    [
+      {
+        fields: {
+          Name: "";
+          Description: "";
+          Type: "";
+          Link: "";
+          Image: [
+            {
+              url: "";
+            },
+          ];
+        };
+      },
+    ]
+  >();
+  const getMovies = () => {
+    api
+      .get(`${movieId}?maxRecords=5`)
+      .then((response) => setMovies(response.data.records))
+      .catch((error) => console.error(error));
+  };
+  useEffect(() => {
+    getMovies(), [];
+  });
   return (
     <StyledMoviesTab>
       <div>
@@ -43,35 +45,19 @@ const MovieTabs = () => {
           </nav>
         </div>
         <div className="top-movies flex-row">
-          <div className="stand-alone">
-            <Image
-              src="/img/bg1.png"
-              alt="bg"
-              width={393}
-              height={250}
-              className="img-frame"
-            />
-            <span>27 Dec 2020</span>
-            <h2>Now Is the Time to Think About Your Small Business Success</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus
-              lobortis augue condimentum maecenas. Metus at in fames vitae
-              posuere ut vel vulputate....
-            </p>
-          </div>
           <div className="container">
-            {otherNews.map((item, index) => (
-              <div key={index} className="each flex-row">
+            {movies?.map((item, index) => (
+              <div key={index} className="each">
                 <Image
-                  src={item.img}
+                  src={item.fields.Image[0].url}
                   alt="bg"
-                  width={90}
-                  height={70}
+                  width={192}
+                  height={288}
                   className="img"
                 />
                 <h2>
-                  <span>{item.date}</span>
-                  {item.heading}
+                  <span>{item.fields.Type}</span>
+                  {item.fields.Name}
                 </h2>
               </div>
             ))}
