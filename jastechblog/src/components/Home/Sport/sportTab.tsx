@@ -79,8 +79,8 @@ const SportTab = () => {
           (sportExist ? 
               <div className="sport-container">
                 {sportNews?.map((item, index) => (
-                  <Link href={`sports/${item.id}`}>
-                      <div key={index} className="each-sport">
+                  <Link href={`sports/${item.id}`} key={index}>
+                      <div className="each-sport">
                         <p className="sport-type">{item.fields.Type}</p>
                         <Image
                           src={item.fields.Image[0].url}
