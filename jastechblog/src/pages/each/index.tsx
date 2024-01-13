@@ -3,7 +3,7 @@ import styled from "styled-components";
 import StayConnected from "@/components/Home/Sport/stayConnected";
 import Ads from "@/components/Home/Ads/ads";
 
-const StyledEachNewsPage = styled.section`
+export const StyledEachNewsPage = styled.section`
   .each-section {
     display: flex;
     flex-direction: row;
@@ -21,6 +21,18 @@ const StyledEachNewsPage = styled.section`
     border-right: 1px solid #393939;
     margin-right: 15px;
     padding-bottom: 40px;
+  }
+  .error-div {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 25px;
+    p {
+      font-size: 30px;
+    }
   }
   h1 {
     align-self: center;
