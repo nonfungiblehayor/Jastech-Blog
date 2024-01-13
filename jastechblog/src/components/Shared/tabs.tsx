@@ -1,9 +1,5 @@
 export const sportTabs = [
   {
-    text: "All",
-    color: "#F65050",
-  },
-  {
     text: "Football",
     color: "#A56CBD",
   },
