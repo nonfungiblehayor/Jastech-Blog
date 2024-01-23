@@ -22,6 +22,17 @@ export const StyledEachNewsPage = styled.section`
     margin-right: 15px;
     padding-bottom: 40px;
   }
+  .download {
+    margin: auto;
+    align-self: center;
+    background-color: #24db24;
+    border-radius: 10px;
+    color: #393939;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    padding: 15px;
+  }
   .error-div {
     width: 60vw;
     display: flex;

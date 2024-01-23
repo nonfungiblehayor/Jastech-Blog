@@ -31,7 +31,7 @@ const SportTab = () => {
   const getSportNews = () => {
     api.get(`${sportId}?filterByFormula=AND(%7BBreaking%7D+%3D+'Yes')&maxRecords=6`)
     .then((response) => (
-      (setSportNews(response.data.records), console.log(response))
+      (setSportNews(response.data.records))
     ))
     .catch((error) => (
       setErrorMsg(error.response.data.error.type)

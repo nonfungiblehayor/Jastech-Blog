@@ -4,16 +4,19 @@ import { movieTabs } from "@/components/Shared/tabs";
 import { api } from "@/pages/api";
 import { useEffect, useState } from "react";
 import Loading from "@/components/Shared/loading";
+import Link from "next/link";
 const MovieTabs = () => {
   const movieId = process.env.NEXT_PUBLIC_MOVIES_ID;
   const [movies, setMovies] = useState<
     [
       {
+        id: '',
         fields: {
           Name: "";
           Description: "";
           Type: "";
           Link: "";
+          Youtube: "";
           Image: [
             {
               url: "";
@@ -56,7 +59,7 @@ const MovieTabs = () => {
       .get(
         `${movieId}?filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=5`,
       )
-      .then((response) => setMovies(response.data.records))
+      .then((response) => (setMovies(response.data.records)))
       .catch((error) => console.error(error));
   };
   useEffect(() => {
@@ -85,6 +88,7 @@ const MovieTabs = () => {
           ) : movieExist ? (
             <div className="container">
               {movies?.map((item, index) => (
+                <Link href={`movie/${item.id}`}>
                 <div key={index} className="each">
                   <Image
                     src={item.fields.Image[0].url}
@@ -98,6 +102,7 @@ const MovieTabs = () => {
                     {item.fields.Name}
                   </h2>
                 </div>
+                </Link>
               ))}
             </div>
           ) : (
