@@ -3,6 +3,7 @@ import { Sofia } from "next/font/google";
 import Link from "next/link";
 import { api } from "@/pages/api";
 import { useEffect, useState } from "react";
+import Loading from "../Shared/loading";
 
 const inter = Sofia({ weight: ["400"], subsets: ["latin"] });
 
@@ -97,11 +98,13 @@ const News = () => {
       },
     ]
   >();
+  const [loadingState, setLoading] = useState<boolean>(false);
   const news = mainNews?.slice(1, 6);
   const getNews = () => {
+    setLoading(true)
     api
       .get(`${newsId}?filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=4`)
-      .then((response) => setMainNews(response.data.records))
+      .then((response) => (setMainNews(response.data.records), setLoading(false)))
       .catch((error) => console.error(error));
   };
   useEffect(() => {
@@ -111,6 +114,7 @@ const News = () => {
   return (
     <StyledNews>
       <section className="flex-row mobile">
+        {loadingState ? <Loading /> :
         <div className="container">
           {news?.map((item, index) => (
             <Link href={`news/${item.id}`} key={index}>
@@ -124,6 +128,7 @@ const News = () => {
             </Link>
           ))}
         </div>
+        }
       </section>
     </StyledNews>
   );
