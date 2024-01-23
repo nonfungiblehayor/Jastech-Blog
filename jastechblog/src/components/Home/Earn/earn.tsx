@@ -69,7 +69,7 @@ const EarnCash = () => {
   const [earning, setEarning] = useState<
     [
       {
-        id: '',
+        id: "";
         fields: {
           Update: "";
           Type: "";
@@ -100,17 +100,17 @@ const EarnCash = () => {
         <div className="container">
           {earning?.map((item, index) => (
             <Link href={`earn/${item.id}`} key={index}>
-            <div className="normal-frame flex-row">
-              <Image
-                src={item.fields.Image[0].url}
-                alt="frame"
-                width={100}
-                height={100}
-              />
-              <h3>
-                {item.fields.Update} {item.fields.Type}
-              </h3>
-            </div>
+              <div className="normal-frame flex-row">
+                <Image
+                  src={item.fields.Image[0].url}
+                  alt="frame"
+                  width={100}
+                  height={100}
+                />
+                <h3>
+                  {item.fields.Update} {item.fields.Type}
+                </h3>
+              </div>
             </Link>
           ))}
         </div>

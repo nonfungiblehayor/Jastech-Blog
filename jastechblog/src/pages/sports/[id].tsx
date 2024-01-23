@@ -1,10 +1,10 @@
-import { NextPageWithLayout } from "../_app"
-import EachSportNews from "@/components/Sports/SportNews"
+import { NextPageWithLayout } from "../_app";
+import EachSportNews from "@/components/Sports/SportNews";
 const SportNews: NextPageWithLayout = () => {
-    return (
-      <div>
-        <EachSportNews />
-      </div>
-    )    
-}
-export default SportNews
+  return (
+    <div>
+      <EachSportNews />
+    </div>
+  );
+};
+export default SportNews;

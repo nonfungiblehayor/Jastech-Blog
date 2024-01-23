@@ -10,7 +10,7 @@ const MovieTabs = () => {
   const [movies, setMovies] = useState<
     [
       {
-        id: '',
+        id: "";
         fields: {
           Name: "";
           Description: "";
@@ -59,7 +59,7 @@ const MovieTabs = () => {
       .get(
         `${movieId}?filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=5`,
       )
-      .then((response) => (setMovies(response.data.records)))
+      .then((response) => setMovies(response.data.records))
       .catch((error) => console.error(error));
   };
   useEffect(() => {
@@ -88,20 +88,20 @@ const MovieTabs = () => {
           ) : movieExist ? (
             <div className="container">
               {movies?.map((item, index) => (
-                <Link href={`movie/${item.id}`}>
-                <div key={index} className="each">
-                  <Image
-                    src={item.fields.Image[0].url}
-                    alt="bg"
-                    width={192}
-                    height={288}
-                    className="img"
-                  />
-                  <h2>
-                    <span>{item.fields.Type}</span>
-                    {item.fields.Name}
-                  </h2>
-                </div>
+                <Link href={`movie/${item.id}`} key={index}>
+                  <div className="each">
+                    <Image
+                      src={item.fields.Image[0].url}
+                      alt="bg"
+                      width={192}
+                      height={288}
+                      className="img"
+                    />
+                    <h2>
+                      <span>{item.fields.Type}</span>
+                      {item.fields.Name}
+                    </h2>
+                  </div>
                 </Link>
               ))}
             </div>

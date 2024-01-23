@@ -87,7 +87,7 @@ const News = () => {
   const [mainNews, setMainNews] = useState<
     [
       {
-        id: '',
+        id: "";
         fields: {
           Headline: "";
           Date: "";
