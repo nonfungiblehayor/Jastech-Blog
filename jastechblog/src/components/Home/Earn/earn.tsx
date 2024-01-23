@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { api } from "@/pages/api";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const StyledEarn = styled.section`
   display: flex;
@@ -68,6 +69,7 @@ const EarnCash = () => {
   const [earning, setEarning] = useState<
     [
       {
+        id: '',
         fields: {
           Update: "";
           Type: "";
@@ -97,7 +99,8 @@ const EarnCash = () => {
         <h1>Earn Cash</h1>
         <div className="container">
           {earning?.map((item, index) => (
-            <div className="normal-frame flex-row" key={index}>
+            <Link href={`earn/${item.id}`} key={index}>
+            <div className="normal-frame flex-row">
               <Image
                 src={item.fields.Image[0].url}
                 alt="frame"
@@ -108,6 +111,7 @@ const EarnCash = () => {
                 {item.fields.Update} {item.fields.Type}
               </h3>
             </div>
+            </Link>
           ))}
         </div>
       </section>

@@ -1,4 +1,3 @@
-import Image from "next/image"
 import YoutubeEmbed from "../Shared/EmbedWebsite"
 import StayConnected from "../Home/Sport/stayConnected"
 import { StyledEachNewsPage } from "@/pages/each"
