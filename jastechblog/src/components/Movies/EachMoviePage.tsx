@@ -1,11 +1,11 @@
 import YoutubeEmbed from "../Shared/EmbedWebsite"
 import StayConnected from "../Home/Sport/stayConnected"
-import { StyledEachNewsPage } from "@/pages/each"
-import { api } from "@/pages/api"
+import { StyledEachNewsPage } from "@/pages/news/[id]"
 import { useEffect, useState } from "react"
 import Loading from "../Shared/loading"
 import { useRouter } from "next/router"
 import Link from "next/link"
+import { api } from "@/pages/api"
 const EachMoviePage = () => {
     const movieId = process.env.NEXT_PUBLIC_MOVIES_ID
     const router = useRouter()

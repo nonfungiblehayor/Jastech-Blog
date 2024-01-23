@@ -1,5 +1,5 @@
 import StayConnected from "../Home/Sport/stayConnected"
-import { StyledEachNewsPage } from "@/pages/each"
+import { StyledEachNewsPage } from "@/pages/news/[id]"
 import { api } from "@/pages/api"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"

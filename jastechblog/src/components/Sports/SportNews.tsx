@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
 import StayConnected from "@/components/Home/Sport/stayConnected"
-import { StyledEachNewsPage } from "@/pages/each"
+import { StyledEachNewsPage } from "@/pages/news/[id]"
 import { api } from "@/pages/api"
 import { useEffect, useState } from "react"
 import Loading from "../Shared/loading"

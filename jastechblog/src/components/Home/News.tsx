@@ -87,6 +87,7 @@ const News = () => {
   const [mainNews, setMainNews] = useState<
     [
       {
+        id: '',
         fields: {
           Headline: "";
           Date: "";
@@ -99,7 +100,7 @@ const News = () => {
   const news = mainNews?.slice(1, 6);
   const getNews = () => {
     api
-      .get(`${newsId}?maxRecords=4`)
+      .get(`${newsId}?filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=4`)
       .then((response) => setMainNews(response.data.records))
       .catch((error) => console.error(error));
   };
@@ -112,7 +113,7 @@ const News = () => {
       <section className="flex-row mobile">
         <div className="container">
           {news?.map((item, index) => (
-            <Link href="/each" key={index}>
+            <Link href={`news/${item.id}`} key={index}>
               <div className="small-frames">
                 <p className="news-type">{item.fields.NewsType}</p>
                 <h2 className="small-frame-text">
