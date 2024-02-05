@@ -10,6 +10,7 @@ const Sport = () => {
         justifyContent: "space-between",
         width: "85vw",
       }}
+      id="sport"
     >
       <SportTab />
       {/* <StayConnected showAds={false} /> */}

@@ -95,7 +95,7 @@ const EarnCash = () => {
   }, []);
   return (
     <StyledEarn>
-      <section>
+      <section id="earn">
         <h1>Earn Cash</h1>
         <div className="container">
           {earning?.map((item, index) => (

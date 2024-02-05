@@ -21,23 +21,19 @@ const Nav = () => {
     },
     {
       text: "Sport",
-      link: "/sport",
+      link: "#sport",
     },
     {
       text: "Movies",
-      link: "/movies",
+      link: "#movies",
     },
     {
       text: "Advertise your product",
       link: "/ads",
     },
     {
-      text: "Airtime & Data",
-      link: "/airtime",
-    },
-    {
       text: "Earn cash",
-      link: "/earn",
+      link: "#earn",
     },
   ];
   const linkRef = useRef<any>();
@@ -57,7 +53,7 @@ const Nav = () => {
         <title>Jastech blog</title>
         <meta name="description" content="Jatech blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/logo2.png" />
       </Head>
       <PreHead />
       <StyledNav>
@@ -70,7 +66,7 @@ const Nav = () => {
               height={62}
               className="logo"
             />
-            <AirtimeBanner />
+            {/* <AirtimeBanner /> */}
             <span className="menu-btn" onClick={displayMenu}>
               <Icons type="hamburger" />
             </span>

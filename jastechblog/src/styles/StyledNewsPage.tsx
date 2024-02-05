@@ -14,6 +14,11 @@ const StyledNewsPage = styled.section`
     color: #f65050;
     font-weight: 500;
   }
+  .news-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 40px;
+  }
   span {
     color: #393939;
     font-size: 12px;
@@ -102,6 +107,13 @@ const StyledNewsPage = styled.section`
       gap: 10px;
       border-top: 1px solid #000;
       padding-top: 20px;
+    }
+    .news-grid {
+      grid-template-columns: auto;
+    }
+    .each-grid {
+      border-bottom: 1px solid #000;
+      padding-bottom: 10px;
     }
     .frame {
       width: 85vw;

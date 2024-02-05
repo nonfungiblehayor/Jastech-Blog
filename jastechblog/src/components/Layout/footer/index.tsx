@@ -114,22 +114,22 @@ const Footer = () => {
     {
       text: "News",
       color: "#F65050",
-      link: "",
+      link: "#news",
     },
     {
       text: "Sport",
       color: "#0088FF",
-      link: "",
+      link: "#sport",
     },
     {
       text: "Movies",
       color: "#A56CBD",
-      link: "",
+      link: "#movies",
     },
     {
       text: "Ads",
       color: "#997C00",
-      link: "",
+      link: "/ads",
     },
     {
       text: "Technology",
@@ -144,7 +144,7 @@ const Footer = () => {
     {
       text: "Earn cash",
       color: "#4281FF",
-      link: "",
+      link: "/earn",
     },
   ];
   return (
@@ -153,7 +153,7 @@ const Footer = () => {
         <div>
           <Image
             src="/img/logo2.png"
-            alt="logo"
+            alt="logo" 
             width={247}
             height={62}
             className="logo"

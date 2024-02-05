@@ -94,6 +94,11 @@ const News = () => {
           Date: "";
           NewsType: "";
           Summary: "";
+          Image: [
+            {
+              url: "";
+            },
+          ];
         };
       },
     ]

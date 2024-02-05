@@ -22,7 +22,7 @@ const StyledMovies = styled.section`
 const Movies = () => {
   return (
     <StyledMovies>
-      <section className="flex">
+      <section className="flex" id="movies">
         <MovieTabs />
       </section>
     </StyledMovies>
