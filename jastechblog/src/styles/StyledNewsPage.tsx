@@ -81,6 +81,23 @@ const StyledNewsPage = styled.section`
     width: 450px;
     gap: 10px;
   }
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    width: 85vw;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      width: 100px;
+    }
+    nav {
+      width: 40vw;
+      gap: 15px;
+      p {
+        padding: 10px;
+      }
+    }
+  }
   h3 {
     color: #000;
     font-size: 16px;
