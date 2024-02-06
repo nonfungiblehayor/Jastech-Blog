@@ -86,7 +86,7 @@ const EarnCash = () => {
   >();
   const getUpdate = () => {
     api
-      .get(`${earnId}?maxRecords=6`)
+      .get(`${earnId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BNew%7D+%3D+'Yes')&maxRecords=6`)
       .then((response) => setEarning(response.data.records))
       .catch((error) => console.error(error));
   };

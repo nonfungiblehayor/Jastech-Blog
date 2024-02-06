@@ -108,7 +108,7 @@ const News = () => {
   const getNews = () => {
     setLoading(true)
     api
-      .get(`${newsId}?filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=4`)
+      .get(`${newsId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=4`)
       .then((response) => (setMainNews(response.data.records), setLoading(false)))
       .catch((error) => console.error(error));
   };
@@ -123,7 +123,7 @@ const News = () => {
         <div className="container">
           {news?.map((item, index) => (
             <Link href={`news/${item.id}`} key={index}>
-              <div className="small-frames">
+              <div className="small-frames" style={{ backgroundImage: `url(${item.fields.Image[0].url})` }}>
                 <p className="news-type">{item.fields.NewsType}</p>
                 <h2 className="small-frame-text">
                   <p style={{ marginBottom: "10px" }}>{item.fields.Date}</p>

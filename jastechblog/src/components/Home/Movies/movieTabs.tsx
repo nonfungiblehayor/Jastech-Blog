@@ -57,7 +57,7 @@ const MovieTabs = () => {
   const getMovies = () => {
     api
       .get(
-        `${movieId}?filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=5`,
+        `${movieId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=5`,
       )
       .then((response) => setMovies(response.data.records))
       .catch((error) => console.error(error));
