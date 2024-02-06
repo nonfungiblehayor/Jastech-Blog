@@ -21,11 +21,11 @@ const Nav = () => {
     },
     {
       text: "Sport",
-      link: "#sport",
+      link: "/sport",
     },
     {
       text: "Movies",
-      link: "#movies",
+      link: "/movies",
     },
     {
       text: "Advertise your product",
@@ -33,7 +33,7 @@ const Nav = () => {
     },
     {
       text: "Earn cash",
-      link: "#earn",
+      link: "/earn",
     },
   ];
   const linkRef = useRef<any>();
