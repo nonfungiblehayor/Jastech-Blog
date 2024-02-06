@@ -125,7 +125,7 @@ useEffect(() => {
           (loadingState ? <Loading /> : 
           <div className="top-news news-grid">
             {topNews?.map((item, index) => (
-              <Link href={`/news/${item.id}`}>
+              <Link href={`/sports/${item.id}`}>
               <div className="each-news each-grid" key={index}>
                 <div
                   className="frame"
