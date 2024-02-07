@@ -1,12 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import StyledMovies from "@/styles/StyledMovies";
 import { useState, useEffect } from "react";
 import Loading from "../Shared/loading";
 import { api } from "@/pages/api";
 import Button from "../Shared/button";
 
-const ActionMovies = () => {
+const Nollywood = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [loadingState, setLoading] = useState<boolean>(false);
   const movieId = process.env.NEXT_PUBLIC_MOVIES_ID;
@@ -33,7 +33,7 @@ const [tabs, setActiveTab] = useState<string>('')
     },
   ]
 >();
-  const [ActionMovies, setActionMovies] = useState<
+  const [nollywood, setNollywood] = useState<
     [
       {
         id: "";
@@ -56,15 +56,15 @@ const [tabs, setActiveTab] = useState<string>('')
     setLoading(true);
     api
       .get(
-        `${movieId}?filterByFormula=AND(%7BType%7D+%3D+'Action'%2C%7BLatest%7D+%3D+'Yes')&maxRecords=5`,
+        `${movieId}?filterByFormula=AND(%7BType%7D+%3D+'Nollywood'%2C%7BLatest%7D+%3D+'Yes')&maxRecords=5`,
       )
       .then((response) =>
         response.data.records.length > 0
-          ? (setActionMovies(response.data.records),
+          ? (setNollywood(response.data.records),
             setLoading(false))
           : (setLoading(false),
             setErrorMsg(
-              `ooops!!!! our Action movie catalogue is empty check back later`,
+              `ooops!!!! our Nollywood catalogue is empty check back later`,
             )),
       )
       .catch(
@@ -77,7 +77,7 @@ const [tabs, setActiveTab] = useState<string>('')
   };
   const loadMore = (amount: number) => {
     setLoadingMore(true)
-    api.get(`${movieId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BTYpe%7D+%3D+'Action'%2C%7BLatest%7D+%3D+'No')&maxRecords=${loadNumber + amount}`)
+    api.get(`${movieId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BTYpe%7D+%3D+'Nollywood'%2C%7BLatest%7D+%3D+'No')&maxRecords=${loadNumber + amount}`)
     .then((response) => (setOldMovies(response.data.records), setLoadingMore(false), setLoadNumber(amount)))
     .catch((error) => (setLoadError(error.response.data.error.message)))
     .finally(() => setLoadingMore(false))
@@ -88,10 +88,10 @@ const [tabs, setActiveTab] = useState<string>('')
   return (
     <StyledMovies>
       <div>
-        <h1>Action Movies</h1>
+        <h1>Nollywood</h1>
         {loadingState ? <Loading /> : (errorMsg !== '' ? <p style={{textAlign: 'center'}}>{errorMsg}</p> :  
         <div className="action-movies">
-          {ActionMovies?.map((item, index) => (
+          {nollywood?.map((item, index) => (
             <Link href={`/movie/${item.id}`} key={index}>
               <div className="each">
                 <Image
@@ -138,4 +138,4 @@ const [tabs, setActiveTab] = useState<string>('')
     </StyledMovies>
   );
 };
-export default ActionMovies;
+export default Nollywood;

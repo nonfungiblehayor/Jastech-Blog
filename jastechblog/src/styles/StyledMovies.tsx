@@ -15,6 +15,11 @@ const StyledMovies = styled.div`
     margin-top: 15px;
     margin-bottom: 20px;
   }
+  .news-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 20px;
+  }
   .action-movies {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
@@ -61,6 +66,9 @@ const StyledMovies = styled.div`
     }
     h1 {
       text-align: center;
+    }
+    .news-grid {
+      grid-template-columns: auto;
     }
   }
 `;
