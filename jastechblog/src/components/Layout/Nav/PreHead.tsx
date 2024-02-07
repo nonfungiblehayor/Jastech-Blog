@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Social from "@/components/Shared/social";
 import { useEffect, useState } from "react";
+import { api } from "@/pages/api";
+import Link from "next/link";
 
 const StyledPreHead = styled.section`
   max-width: 100%;
@@ -48,6 +50,35 @@ const StyledPreHead = styled.section`
 const PreHead = () => {
   const [day, setDay] = useState<string>();
   const [date, setDate] = useState<string>();
+  const newsId = process.env.NEXT_PUBLIC_NEWS_ID;
+  const [errorMessage, setErrorMessage] = useState('')
+  const [breakingNews, setBreakingNews] = useState<
+  [
+    {
+      id: "";
+      fields: {
+        Headline: "";
+        Date: "";
+        NewsType: "";
+        Summary: "";
+        Image: [
+          {
+            url: "";
+          },
+        ];
+      };
+    },
+  ]
+>();
+const getBreakingNews = () => {
+  api.get(`${newsId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=1`)
+  .then(((response) => (
+    setBreakingNews(response.data.records)
+  )))
+  .catch((error)=> (
+    setErrorMessage(error.response.data.error.message)
+  ))
+}
   useEffect(() => {
     const currentDate = new Date();
     const days = [
@@ -81,6 +112,7 @@ const PreHead = () => {
     const dates = `${date} ${month} ${year}`;
     setDate(dates);
     setDay(day);
+    getBreakingNews()
   }, []);
 
   return (
@@ -90,12 +122,20 @@ const PreHead = () => {
           <p>
             {day}, {date}
           </p>
+          {errorMessage !== '' ? <p>{errorMessage}</p> : 
+          <>
           <h1 className="flex-row">Breaking News</h1>
-          <p>Indonesia says located black box recorders from crashed plane</p>
+          {breakingNews?.map((item, index) => (
+            <Link href={`/news/${item.id}`} key={index}>
+                  <p>{item.fields.Headline}</p>
+            </Link>
+          ))}
+          </>
+        }
         </div>
         <Social />
       </section>
     </StyledPreHead>
   );
 };
-export default PreHead;
+export default PreHead
