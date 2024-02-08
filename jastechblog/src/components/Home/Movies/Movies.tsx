@@ -1,7 +1,8 @@
 import MovieTabs from "./movieTabs";
 import styled from "styled-components";
 import Trending from "./trending";
-
+import { useRouter } from "next/router";
+import Button from "@/components/Shared/button";
 const StyledMovies = styled.section`
   .flex {
     display: flex;
@@ -20,11 +21,13 @@ const StyledMovies = styled.section`
   }
 `;
 const Movies = () => {
+  const router = useRouter()
   return (
     <StyledMovies>
       <section className="flex" id="movies">
         <MovieTabs />
       </section>
+      <Button label="Load more" className="btn" onClick={() => router.push('/movies')} />
     </StyledMovies>
   );
 };

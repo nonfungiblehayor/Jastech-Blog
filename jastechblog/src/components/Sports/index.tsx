@@ -125,8 +125,8 @@ useEffect(() => {
           (loadingState ? <Loading /> : 
           <div className="top-news news-grid">
             {topNews?.map((item, index) => (
-              <Link href={`/sports/${item.id}`}>
-              <div className="each-news each-grid" key={index}>
+              <Link href={`/sports/${item.id}`} key={index}>
+              <div className="each-news each-grid">
                 <div
                   className="frame"
                   style={{ backgroundImage: `url(${item.fields.Image[0].url})` }}

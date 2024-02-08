@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { api } from "@/pages/api";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Button from "@/components/Shared/button";
+import { useRouter } from "next/router";
 
 const StyledEarn = styled.section`
   display: flex;
@@ -84,6 +86,7 @@ const EarnCash = () => {
       },
     ]
   >();
+  const router = useRouter()
   const getUpdate = () => {
     api
       .get(`${earnId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BNew%7D+%3D+'Yes')&maxRecords=6`)
@@ -115,6 +118,7 @@ const EarnCash = () => {
           ))}
         </div>
       </section>
+      <Button label="Load more" className="btn" onClick={() => router.push('/earn')} />
     </StyledEarn>
   );
 };

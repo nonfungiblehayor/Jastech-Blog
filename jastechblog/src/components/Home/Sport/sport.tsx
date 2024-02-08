@@ -1,7 +1,10 @@
 import StayConnected from "./stayConnected";
 import SportTab from "./sportTab";
+import { useRouter } from "next/router";
+import Button from "@/components/Shared/button";
 const Sport = () => {
-  return (
+  const router = useRouter()
+  return (<>
     <section
       className="flex-row"
       style={{
@@ -15,6 +18,8 @@ const Sport = () => {
       <SportTab />
       {/* <StayConnected showAds={false} /> */}
     </section>
+    <Button label="Load more" className="btn" onClick={() => router.push('/sport')} />
+    </>
   );
 };
 export default Sport;

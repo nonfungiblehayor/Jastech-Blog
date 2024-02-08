@@ -62,8 +62,8 @@ const Nav = () => {
             <Image
               src="/img/logo.png"
               alt="logo"
-              width={258}
-              height={200}
+              width={158}
+              height={100}
               className="logo"
             />
             {/* <AirtimeBanner /> */}

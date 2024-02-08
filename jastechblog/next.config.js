@@ -15,6 +15,6 @@ const nextConfig = {
         hostname: 'v5.airtableusercontent.com',
       },
     ],
-  },
+  }
 };
 module.exports = nextConfig;

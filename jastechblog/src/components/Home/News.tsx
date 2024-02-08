@@ -4,6 +4,8 @@ import Link from "next/link";
 import { api } from "@/pages/api";
 import { useEffect, useState } from "react";
 import Loading from "../Shared/loading";
+import Button from "../Shared/button";
+import { useRouter } from "next/router";
 
 const inter = Sofia({ weight: ["400"], subsets: ["latin"] });
 
@@ -103,8 +105,9 @@ const News = () => {
       },
     ]
   >();
+  const router = useRouter()
   const [loadingState, setLoading] = useState<boolean>(false);
-  const news = mainNews?.slice(1, 6);
+  const news = mainNews;
   const getNews = () => {
     setLoading(true)
     api
@@ -135,6 +138,7 @@ const News = () => {
         </div>
         }
       </section>
+      <Button label="Load more" className="btn" onClick={() => router.push('/news')} />
     </StyledNews>
   );
 };

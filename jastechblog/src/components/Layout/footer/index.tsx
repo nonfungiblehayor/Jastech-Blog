@@ -114,17 +114,17 @@ const Footer = () => {
     {
       text: "News",
       color: "#F65050",
-      link: "#news",
+      link: "/news",
     },
     {
       text: "Sport",
       color: "#0088FF",
-      link: "#sport",
+      link: "/sport",
     },
     {
       text: "Movies",
       color: "#A56CBD",
-      link: "#movies",
+      link: "/movies",
     },
     {
       text: "Ads",

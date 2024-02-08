@@ -32,8 +32,8 @@ const StyledNav = styled.header`
       margin-top: -20px;
     }
     .logo {
-      width: 146px;
-      height: 32px;
+      width: 140px;
+      height: 82px;
     }
     .div {
       display: flex;

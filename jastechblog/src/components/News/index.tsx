@@ -75,8 +75,8 @@ useEffect(() => {
         (loadingState ? <Loading /> : 
         <div className="top-news news-grid">
           {mainNews?.map((item, index) => (
-            <Link href={`/news/${item.id}`}>
-            <div className="each-news each-grid" key={index}>
+            <Link href={`/news/${item.id}`} key={index}>
+            <div className="each-news each-grid">
               <div
                 className="frame"
                 style={{ backgroundImage: `url(${item.fields.Image[0].url})` }}
@@ -98,8 +98,8 @@ useEffect(() => {
          {loadError ? <p style={{color: 'red', textAlign: 'center', marginTop: '25px'}}>{loadError}</p> : 
         <div className="top-news news-grid">
           {oldNews?.map((item, index) => (
-            <Link href={`/news/${item.id}`}>
-            <div className="each-news each-grid" key={index}>
+            <Link href={`/news/${item.id}`} key={index}>
+            <div className="each-news each-grid">
               <div
                 className="frame"
                 style={{ backgroundImage: `url(${item.fields.Image[0].url})` }}
