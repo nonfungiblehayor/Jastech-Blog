@@ -53,17 +53,17 @@ const Nav = () => {
         <title>Jastech blog</title>
         <meta name="description" content="Jatech blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/img/logo2.png" />
+        <link rel="icon" href="/img/logo.png" />
       </Head>
       <PreHead />
       <StyledNav>
         <header>
           <div className={` flex-row ${sofia.className} div`}>
             <Image
-              src="/img/Logo.png"
+              src="/img/logo.png"
               alt="logo"
-              width={247}
-              height={62}
+              width={258}
+              height={200}
               className="logo"
             />
             {/* <AirtimeBanner /> */}

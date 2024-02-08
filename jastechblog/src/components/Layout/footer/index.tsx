@@ -152,10 +152,10 @@ const Footer = () => {
       <footer className={` flex-row ${sofia.className} flex-col`}>
         <div>
           <Image
-            src="/img/logo2.png"
+            src="/img/logo.png"
             alt="logo" 
-            width={247}
-            height={62}
+            width={258}
+            height={200}
             className="logo"
           />
           <p>
