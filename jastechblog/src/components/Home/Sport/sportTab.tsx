@@ -33,8 +33,8 @@ const SportTab = () => {
       .get(
         `${sportId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BBreaking%7D+%3D+'Yes')&maxRecords=6`,
       )
-      .then((response) => setSportNews(response.data.records))
-      .catch((error) => setErrorMsg(error.response.data.error.message));
+      .then((response) => (response.data.records.length > 0 ? (setSportNews(response.data.records), setExist(true)) : (setErrorMsg('No Breaking news as of this moment'), setExist(false))))
+      .catch((error) => setErrorMsg(error.response.data.error.message))
   };
   const getSportCategory = (type: string) => {
     setLoading(true);

@@ -87,11 +87,13 @@ const EarnCash = () => {
     ]
   >();
   const router = useRouter()
+  const [sportExist, setExist] = useState<boolean>();
+  const [errorMsg, setErrorMsg] = useState("");
   const getUpdate = () => {
     api
       .get(`${earnId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BNew%7D+%3D+'Yes')&maxRecords=6`)
-      .then((response) => setEarning(response.data.records))
-      .catch((error) => console.error(error));
+      .then((response) => (response.data.records.length > 0 ? (setEarning(response.data.records), console.log(response.data.records.length)): setErrorMsg('No latest update as of this moment'), setExist(false)))
+      .catch((error) => setErrorMsg(error.response.data.error.message));
   };
   useEffect(() => {
     getUpdate();

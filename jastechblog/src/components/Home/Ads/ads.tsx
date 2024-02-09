@@ -21,13 +21,13 @@ const StyledAds = styled.section`
   .wide-frame {
     width: 85vw;
     height: 400px;
-    background-image: url("./img/Video.png");
+    background-color: #f650502b;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 25px;
     padding-left: 20px;
   }
@@ -46,6 +46,7 @@ const StyledAds = styled.section`
     font-size: 36px;
     font-weight: 500;
     width: 600px;
+    text-align: center;
   }
   @media (max-width: 768px) {
     .wide-frame {
@@ -73,8 +74,7 @@ const Ads = () => {
         <div className="container">
           {ads.map((item, index) => (
             <div className="wide-frame" key={index}>
-              <p>{item.type}</p>
-              <h2>{item.heading}</h2>
+              <h2>Coming Soon</h2>
             </div>
           ))}
         </div>

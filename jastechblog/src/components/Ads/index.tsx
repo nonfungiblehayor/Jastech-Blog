@@ -1,17 +1,12 @@
 import Input from "../Shared/input";
 import StyledAdsPage from "@/styles/StyledAdsPage";
+import Ads from "../Home/Ads/ads";
 const AdsPage = () => {
   return (
     <StyledAdsPage>
       <section>
-        <p>
-          Thank you for choosing Newscast as a platform to showcase your amazing
-          product! We`re thrilled to partner with you in promoting your business
-          to our engaged audience. To ensure we create a compelling and accurate
-          representation of your product, please take a few moments to fill out
-          the following form.
-        </p>
-        <h3>Why advertise with us?</h3>
+       <Ads />
+        {/* <h3>Why advertise with us?</h3>
         <ul>
           <li>Reach a diverse and active online community.</li>
           <li>Gain visibility among our dedicated audience.</li>
@@ -117,7 +112,7 @@ const AdsPage = () => {
             <textarea className="full-width"></textarea>
           </div>
           <button>Submit</button>
-        </form>
+        </form> */}
       </section>
     </StyledAdsPage>
   );

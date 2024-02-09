@@ -107,13 +107,15 @@ const News = () => {
   >();
   const router = useRouter()
   const [loadingState, setLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>()
   const news = mainNews;
   const getNews = () => {
     setLoading(true)
     api
       .get(`${newsId}?sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=desc&filterByFormula=AND(%7BLatest%7D+%3D+'Yes')&maxRecords=4`)
-      .then((response) => (setMainNews(response.data.records), setLoading(false)))
-      .catch((error) => console.error(error));
+      .then((response) => (response.data.records.length > 0 ? (setMainNews(response.data.records)) : (setErrorMessage('No Breaking news as of this moment'))))
+      .catch((error) => setErrorMessage(error.response.data.error.message))
+      .finally(() => setLoading(false))
   };
   useEffect(() => {
     getNews();
@@ -121,6 +123,8 @@ const News = () => {
 
   return (
     <StyledNews>
+      {errorMessage ? <p style={{color: 'red', textAlign: 'center'}}>{errorMessage}</p> : 
+      <>
       <section className="flex-row mobile">
         {loadingState ? <Loading /> :
         <div className="container">
@@ -139,6 +143,8 @@ const News = () => {
         }
       </section>
       <Button label="Load more" className="btn" onClick={() => router.push('/news')} />
+      </>
+    }
     </StyledNews>
   );
 };
