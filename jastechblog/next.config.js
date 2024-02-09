@@ -3,7 +3,6 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  distDir: "_next",
   swcMinify: true,
   compiler: {
     styledComponents: true,
