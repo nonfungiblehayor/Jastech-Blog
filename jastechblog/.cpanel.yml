@@ -1,5 +1,4 @@
-# .cpanel.yml
-
+---
 deployment:
   tasks:
     - export DEPLOY_ENV=production
