@@ -1,0 +1,13 @@
+# .cpanel.yml
+
+deployment:
+  tasks:
+    - export DEPLOY_ENV=production
+    - export NPM_CONFIG_PRODUCTION=false
+    - cd /home/<jastech1>/public_html
+    - /opt/cpanel/ea-nodejs16/bin/yarn install
+    - /opt/cpanel/ea-nodejs16/bin/yarn run build
+    - rsync -a --delete-after .next /home/<jastech1>/public_html
+    - rsync -a --delete-after static /home/<jastech1>/public_html/static
+    - cp -R public/* /home/<jastech1>/public_html
+    - /opt/cpanel/ea-nodejs16/bin/yarn install --only=prod
